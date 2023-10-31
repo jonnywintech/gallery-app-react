@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  node:
+    image: node:20.9.0-slim
+    ports:
+      - ${REACT_APP_BASE_PORT}:$REACT_APP_BASE_PORT
+      - 5176:5176
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: npm run dev
+    # command: tail -f /dev/null
