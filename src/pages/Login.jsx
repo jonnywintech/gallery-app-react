@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const Login = () => {
   const [redirect, setRedirect] = useState(false);
@@ -41,10 +41,10 @@ const Login = () => {
       alert('invalid credentials');
     }
   }
-  //redirect
-//   if (redirect) {
-//     return redirect('/');
-//   }
+
+  if (redirect) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <>
